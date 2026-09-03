@@ -1,27 +1,83 @@
 {
   "profile": {
-    "name": "Li Guoqiu",
+    "name": "Li Guoqiu (李国球)",
     "initials": "LG",
-    "avatar": "",
+    "avatar": "images/uploads/lgq.jpg",
     "role": "Senior Algorithm Engineer",
-    "company": "Alibaba Group — Taobao Technology",
+    "company": "Alibaba Group — Taobao Technology (淘天业务技术)",
     "bio": [
-      "I am a Senior Algorithm Engineer at Alibaba Group’s Taobao Technology, working on applied artificial intelligence at scale.",
+      "I am a Senior Algorithm Engineer at Alibaba Group’s Taobao Technology Department, where I focus on research and development in AIGC for indoor spatial applications.", 
+      "My research focuses on 3D content generation and physics-driven world models, with a particular interest in bridging generative AI, computer vision, and computer graphics to enable machines to understand and create realistic 3D worlds.",
       "I received an M.S. in Artificial Intelligence from Tsinghua University and a B.Eng. in Electronic Information from Huazhong University of Science and Technology."
     ],
+    "email": "lucas_lgq@163.com",
+    "scholar_url": "https://scholar.google.com/citations?user=4NFEXOIAAAAJ&hl=en",
     "contact_note": "Contact details coming soon"
   },
   "news": [
-    { "date": "2025", "text": "Promoted to Senior Algorithm Engineer at Alibaba Group." },
-    { "date": "2023", "text": "Joined Taobao Technology, Alibaba Group, as an Algorithm Engineer." },
-    { "date": "2023", "text": "Graduated with an M.S. in Artificial Intelligence from Tsinghua University." },
-    { "date": "2020", "text": "Graduated with a B.Eng. in Electronic Information from Huazhong University of Science and Technology." }
+    { "date": "2026.6", "text": "Our technical report “Home3D 1.0: A High-Fidelity Image-to-3D Asset Generation System for Interior Design” is publicly available on arXiv!" },
+    { "date": "2025.7", "text": "Promoted to Senior Algorithm Engineer at Alibaba Group." },
+    { "date": "2024.11", "text": "Paper HomeDiffusion accepted at AAAI 2024." },
+    { "date": "2024.6", "text": "Invited speaker at A2M 2024, presenting “AIGC+3D：开创家居导购新时代” " },
+    { "date": "2023.7", "text": "Joined Taobao Technology, Alibaba Group, as an Algorithm Engineer." }
   ],
-  "projects": [],
+  "publications": [
+    {
+    "image": "images/publications/home3d.jpg",
+    "title": "Home3D 1.0: A High-Fidelity Image-to-3D Asset Generation System for Interior Design",
+    "authors": "Guoqiu Li, et al.",
+    "venue": "Technical Report, 2026",
+    "pdf_url": "papers/Home3D.pdf"
+    },
+    {
+    "image": "images/publications/homediffusion.jpg",
+    "title": "HomeDiffusion: Zero-Shot Object Customization with Multi-View Representation Learning for Indoor Scenes",
+    "authors": "Guoqiu Li, Jin Song, Yiyun Fei",
+    "venue": "AAAI, 2025",
+    "pdf_url": "papers/HomeDiffusion.pdf"
+    },
+    {
+    "image": "images/publications/scalevad.jpg",
+    "title": "Scale-Aware Spatio-Temporal Relation Learning for Video Anomaly Detection",
+    "authors": "Guoqiu Li, Guanxiong Cai, Xingyu Zeng, Rui Zhao",
+    "venue": "ECCV, 2022",
+    "pdf_url": "papers/ScaleAwareVAD.pdf"
+    },
+    {
+    "image": "images/publications/AADI.jpg",
+    "title": "Scale-Aware Spatio-Temporal Relation Learning for Video Anomaly Detection",
+    "authors": "Xiaopei Wan*, Guoqiu Li*, Yujiu Yang, Zhenhua Guo",
+    "author_note": "* Equal contribution",
+    "venue": "IJCAI, 2022",
+    "pdf_url": "papers/AADI.pdf"
+    }
+  ],
+  "projects": [
+    {
+      "image": "images/uploads/i23d.jpg",
+      "title": "家作-AI建模",
+      "meta": "Algorithm Lead, 2025-Present",
+      "description": "Developed an end-to-end AI generation platform converting single furniture images into render-grade 3D meshes with high-fidelity geometry, PBR materials, and semantic parts.",
+      "video_url": "",
+      "paper_url": "https://arxiv.org/pdf/2606.27923v2",
+      "news_url": "",
+      "web_url": "https://jiazuo.taobao.com/#/app?appCode=ITEM_TO_MODEL"
+    },
+    {
+      "image": "images/uploads/fangwojia.jpg",
+      "title": "淘宝放我家",
+      "meta": "Principal Algorithm Engineer, 2024-2025",
+      "description": "AI-powered virtual interior design platform enabling users to visualize Taobao furniture in their homes via automated scene reconstruction, intelligent layout optimization and photorealistic AI rendering.",
+      "video_url": "https://www.bilibili.com/video/BV1a6oYBWExa",
+      "paper_url": "https://arxiv.org/pdf/2606.29828",
+      "news_url": "https://hea.china.com/articles/20260520/202605201873233.html",
+      "web_url": ""
+    }
+  ],
   "experience": [
-    { "period": "2025 — Present", "title": "Senior Algorithm Engineer", "organization": "Alibaba Group", "detail": "Taobao Technology", "current": true },
-    { "period": "2023 — 2025", "title": "Algorithm Engineer", "organization": "Alibaba Group", "detail": "Taobao Technology", "current": false },
-    { "period": "2020 — 2023", "title": "M.S. in Artificial Intelligence", "organization": "Tsinghua University", "detail": "", "current": false },
-    { "period": "2016 — 2020", "title": "B.Eng. in Electronic Information", "organization": "Huazhong University of Science and Technology", "detail": "", "current": false }
+    { "period": "2025.7 — Present", "title": "Senior Algorithm Engineer", "organization": "Alibaba Group", "detail": "Taobao Technology", "current": true },
+    { "period": "2023.7 — 2025.7", "title": "Algorithm Engineer", "organization": "Alibaba Group", "detail": "Taobao Technology", "current": false },
+    { "period": "2020.9 — 2023.6", "title": "M.S. in Artificial Intelligence", "organization": "Tsinghua University", "detail": "", "current": false },
+    { "period": "2016.9 — 2020.6", "title": "B.Eng. in Electronic Information", "organization": "Huazhong University of Science and Technology", "detail": "", "current": false }
   ]
 }
