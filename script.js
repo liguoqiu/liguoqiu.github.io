@@ -6,7 +6,7 @@ const fallbackContent = {
       'I am a Senior Algorithm Engineer at Alibaba Group’s Taobao Technology, working on applied artificial intelligence at scale.',
       'I received an M.S. in Artificial Intelligence from Tsinghua University and a B.Eng. in Electronic Information from Huazhong University of Science and Technology.'
     ],
-    contact_note: 'Contact details coming soon'
+    email: '', scholar_url: '', contact_note: 'Contact details coming soon'
   },
   news: [
     { date: '2025', text: 'Promoted to Senior Algorithm Engineer at Alibaba Group.' },
@@ -14,6 +14,7 @@ const fallbackContent = {
     { date: '2023', text: 'Graduated with an M.S. in Artificial Intelligence from Tsinghua University.' },
     { date: '2020', text: 'Graduated with a B.Eng. in Electronic Information from Huazhong University of Science and Technology.' }
   ],
+  publications: [],
   projects: [],
   experience: [
     { period: '2025 — Present', title: 'Senior Algorithm Engineer', organization: 'Alibaba Group', detail: 'Taobao Technology', current: true },
@@ -50,7 +51,21 @@ function renderSite(content) {
   bio.replaceChildren(...(profile.bio || []).map((paragraph) => element('p', paragraph)));
   const contact = document.querySelector('.intro-links');
   contact.replaceChildren();
-  if (profile.contact_note) contact.append(element('span', profile.contact_note, 'contact-pending'));
+  if (profile.email) {
+    const emailLink = element('a', 'Email', 'profile-link email-link');
+    emailLink.href = `mailto:${profile.email}`;
+    contact.append(emailLink);
+  }
+  if (profile.scholar_url) {
+    const scholarLink = element('a', 'Google Scholar', 'profile-link scholar-link');
+    scholarLink.href = profile.scholar_url;
+    scholarLink.target = '_blank';
+    scholarLink.rel = 'noopener noreferrer';
+    contact.append(scholarLink);
+  }
+  if (!profile.email && !profile.scholar_url && profile.contact_note) {
+    contact.append(element('span', profile.contact_note, 'contact-pending'));
+  }
 
   const newsList = document.querySelector('.news-list');
   newsList.replaceChildren(...(content.news || []).map((item) => {
@@ -58,6 +73,36 @@ function renderSite(content) {
     entry.append(element('time', item.date), element('p', item.text));
     return entry;
   }));
+
+  const publications = document.querySelector('.publication-list');
+  const publicationItems = content.publications || [];
+  if (!publicationItems.length) {
+    const empty = element('article', '', 'publication-card publication-empty');
+    empty.append(element('div', '', 'publication-cover publication-cover-fallback'), element('p', 'Publication entries will appear here.'));
+    publications.replaceChildren(empty);
+  } else {
+    publications.replaceChildren(...publicationItems.map((item, index) => {
+      const card = element('article', '', 'publication-card');
+      const cover = element('div', '', `publication-cover publication-cover-${index % 3}`);
+      if (item.image) {
+        cover.style.backgroundImage = `url("${item.image}")`;
+        cover.style.backgroundSize = 'cover';
+        cover.style.backgroundPosition = 'center';
+      }
+      const info = element('div', '', 'publication-info');
+      info.append(element('h3', item.title));
+      if (item.authors) info.append(element('p', item.authors, 'publication-authors'));
+      if (item.venue) info.append(element('p', item.venue, 'publication-venue'));
+      if (item.author_note) info.append(element('p', item.author_note, 'author-note'));
+      if (item.pdf_url) {
+        const pdf = projectLink(item.pdf_url, 'Read PDF');
+        pdf.className = 'publication-pdf';
+        info.append(pdf);
+      }
+      card.append(cover, info);
+      return card;
+    }));
+  }
 
   const projects = document.querySelector('.project-list');
   const projectItems = content.projects || [];
@@ -77,6 +122,16 @@ function renderSite(content) {
       card.append(art, element('h3', item.title));
       if (item.meta) card.append(element('p', item.meta, 'project-meta'));
       if (item.description) card.append(element('p', item.description, 'project-description'));
+      const links = [];
+      if (item.video_url) links.push(projectLink(item.video_url, 'Video'));
+      if (item.paper_url) links.push(projectLink(item.paper_url, 'Paper'));
+      if (item.news_url) links.push(projectLink(item.news_url, 'News'));
+      if (item.web_url) links.push(projectLink(item.web_url, 'Website'));
+      if (links.length) {
+        const projectLinks = element('div', '', 'project-links');
+        projectLinks.append(...links);
+        card.append(projectLinks);
+      }
       return card;
     }));
   }
@@ -88,6 +143,14 @@ function renderSite(content) {
     if (item.detail) entry.append(element('p', item.detail));
     return entry;
   }));
+}
+
+function projectLink(url, label) {
+  const link = element('a', label);
+  link.href = url;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  return link;
 }
 
 async function loadContent() {
