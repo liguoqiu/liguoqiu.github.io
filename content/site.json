@@ -1,0 +1,27 @@
+{
+  "profile": {
+    "name": "Li Guoqiu",
+    "initials": "LG",
+    "avatar": "",
+    "role": "Senior Algorithm Engineer",
+    "company": "Alibaba Group — Taobao Technology",
+    "bio": [
+      "I am a Senior Algorithm Engineer at Alibaba Group’s Taobao Technology, working on applied artificial intelligence at scale.",
+      "I received an M.S. in Artificial Intelligence from Tsinghua University and a B.Eng. in Electronic Information from Huazhong University of Science and Technology."
+    ],
+    "contact_note": "Contact details coming soon"
+  },
+  "news": [
+    { "date": "2025", "text": "Promoted to Senior Algorithm Engineer at Alibaba Group." },
+    { "date": "2023", "text": "Joined Taobao Technology, Alibaba Group, as an Algorithm Engineer." },
+    { "date": "2023", "text": "Graduated with an M.S. in Artificial Intelligence from Tsinghua University." },
+    { "date": "2020", "text": "Graduated with a B.Eng. in Electronic Information from Huazhong University of Science and Technology." }
+  ],
+  "projects": [],
+  "experience": [
+    { "period": "2025 — Present", "title": "Senior Algorithm Engineer", "organization": "Alibaba Group", "detail": "Taobao Technology", "current": true },
+    { "period": "2023 — 2025", "title": "Algorithm Engineer", "organization": "Alibaba Group", "detail": "Taobao Technology", "current": false },
+    { "period": "2020 — 2023", "title": "M.S. in Artificial Intelligence", "organization": "Tsinghua University", "detail": "", "current": false },
+    { "period": "2016 — 2020", "title": "B.Eng. in Electronic Information", "organization": "Huazhong University of Science and Technology", "detail": "", "current": false }
+  ]
+}
