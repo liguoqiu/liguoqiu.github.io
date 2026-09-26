@@ -45,7 +45,7 @@
     },
     {
     "image": "images/publications/AADI.jpg",
-    "title": "Scale-Aware Spatio-Temporal Relation Learning for Video Anomaly Detection",
+    "title": "Augmenting Anchors by the Detector Itself",
     "authors": "Xiaopei Wan*, Guoqiu Li*, Yujiu Yang, Zhenhua Guo",
     "author_note": "* Equal contribution",
     "venue": "IJCAI, 2022",
